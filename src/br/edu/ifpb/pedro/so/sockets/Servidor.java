@@ -49,7 +49,7 @@ public class Servidor {
             		if (msg != null) {
             			dos.writeUTF(msg);
             		} else {
-            			dos.writeUTF("DiretÛrio ou arquivo n„o existe");
+            			dos.writeUTF("Diret√≥rio ou arquivo n√£o existe");
             		}
             		
             		break;
@@ -59,7 +59,7 @@ public class Servidor {
             		if (server.rename(arrayMessage[1], arrayMessage[2])) {
             			dos.writeUTF("Arquivo renomeado com sucesso!");
             		} else {
-            			dos.writeUTF("DiretÛrio ou arquivo n„o existe");
+            			dos.writeUTF("Diret√≥rio ou arquivo n√£o existe");
             		}
             		
             		break;
@@ -69,7 +69,7 @@ public class Servidor {
             		if (server.create(arrayMessage[1])) {
             			dos.writeUTF("Arquivo criado com sucesso!");
             		} else {
-            			dos.writeUTF("Arquivo j· existe");
+            			dos.writeUTF("Arquivo j√° existe");
             		}
             		
             		break;
@@ -79,20 +79,20 @@ public class Servidor {
             		if (server.remove(arrayMessage[1])) {
             			dos.writeUTF("Arquivo removido com sucesso!");
             		} else {
-            			dos.writeUTF("Arquivo n„o existe");
+            			dos.writeUTF("Arquivo n√£o existe");
             		}
             		
             		break;
             
             		
             	default:
-            		dos.writeUTF(arrayMessage[0] + " comando n„o reconhecido.");
+            		dos.writeUTF(arrayMessage[0] + " comando n√£o reconhecido.");
             		break;
             }
         }
         /*
          * Observe o while acima. Perceba que primeiro se l√™ a mensagem vinda do cliente (linha 29, depois se escreve
-         * (linha 32) no canal de sa√≠da do socket. Isso ocorre da forma inversa do que ocorre no while do Cliente2,
+         * (linha 32) no canal de sa√≠da do socket. Isso ocorre da forma inversa do que ocorre no while do Cliente,
          * pois, de outra forma, daria deadlock (se ambos quiserem ler da entrada ao mesmo tempo, por exemplo,
          * ningu√©m evoluiria, j√° que todos estariam aguardando.
          */
